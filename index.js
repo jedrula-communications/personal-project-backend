@@ -11,8 +11,8 @@ app.use(function(req, res, next) {
 });
 
 // respond with "hello world" when a GET request is made to the homepage
-app.get('/posts', (req, res) => {
-  res.send('hello world');
+app.post('/posts', (req, res) => {
+  res.send('TODO implement db save and proper jsonapi response');
 });
 
 // process.env.PORT lets the port be set by Heroku
