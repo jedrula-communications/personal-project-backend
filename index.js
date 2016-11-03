@@ -2,7 +2,14 @@
 console.log('started');
 
 const express = require('express');
+const bodyParser = require('body-parser')
+
 const app = express();
+app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
+
+const db = require('./db');
+const router = require('./router')(app, db);
+
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -10,10 +17,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-// respond with "hello world" when a GET request is made to the homepage
-app.post('/posts', (req, res) => {
-  res.send('TODO implement db save and proper jsonapi response');
-});
+router.init();
 
 // process.env.PORT lets the port be set by Heroku
 const port = process.env.PORT || 3000;
