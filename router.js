@@ -10,11 +10,11 @@ module.exports = (app, db) => {
 }
 
 function _pathHandler(app, db, path) {
-  console.log('path handler for ', path)
   app.route(path)
       .post(_postHandler.bind(null, db, path))
       .get(_getHandler.bind(null, db, path));
-      // TODO add other handlers - delete, update, read
+  app.route(`${path}/:id`)
+      .delete(_deleteHandler.bind(null, db, path));
 }
 
 function _postHandler(db, path, req, res) {
@@ -44,6 +44,18 @@ function _getHandler(db, path, req, res) {
   });
 }
 
+function _deleteHandler(db, path, req, res) {
+  const { model, serializer } = db[path];
+  const id = req.params.id;
+  _deleteFromDb({ model, id }, (dbError, obj) => {
+    if (dbError) {
+      res.status(500).json(dbError);
+    } else {
+      res.sendStatus(204);
+    }
+  });
+}
+
 function _saveToDb(options, callback) {
   const { model, data } = options;
   const instance = new model(data);
@@ -53,4 +65,9 @@ function _saveToDb(options, callback) {
 function _getFromDb(options, callback) {
   const { model, path } = options;
   model.find({}, callback);
+}
+
+function _deleteFromDb(options, callback) {
+  const { model, id } = options;
+  model.remove({_id: id}, callback);
 }
