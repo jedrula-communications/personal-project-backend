@@ -6,6 +6,7 @@ const postSchemaPojo = {
     // author    : ObjectId, TODO
     title     : String,
     body      : String,
+    category  : String,
     date      : Date
 }
 // TODO move to seperate file
