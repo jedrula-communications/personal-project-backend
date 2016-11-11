@@ -1,4 +1,25 @@
 {
+  "name": "jsonapi-backend",
+  "version": "0.0.1",
+  "description": "json:api backend",
+  "keywords": [
+    "jsonapi",
+    "json:api",
+    "api"
+  ],
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "main": "index.js",
+  "author": "Andrzej Swaton",
+  "dependencies": {
+    "joi": "^9.0.4",
+    "jsonapi-server": "^2.2.0",
+    "jsonapi-store-mongodb": "^1.5.0"
+  }
+}
+
+{
   "name": "jedrula-nodejs-backend",
   "version": "1.0.0",
   "description": "backend for jedrula page",
@@ -13,7 +34,8 @@
   },
   "keywords": [
     "nodejs",
-    "express"
+    "express",
+    "json:api",
   ],
   "author": "andrzej.swaton@gmail.com",
   "license": "ISC",
@@ -22,10 +44,9 @@
   },
   "homepage": "https://github.com/jedrula/personal-project-backend#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "jsonapi-serializer": "^3.4.1",
-    "mongoose": "^4.6.5",
+    "joi": "^9.0.4",
+    "jsonapi-server": "^2.2.0",
+    "jsonapi-store-mongodb": "^1.5.0",
     "qunit-tap": "^1.5.1",
     "qunitjs": "^2.0.1",
     "sinon": "^1.17.6"
@@ -34,3 +55,4 @@
     "node": "6.2.0"
   }
 }
+
