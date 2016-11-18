@@ -23,9 +23,11 @@
   },
   "homepage": "https://github.com/jedrula/personal-project-backend#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
     "joi": "^9.0.4",
     "jsonapi-server": "^2.2.0",
     "jsonapi-store-mongodb": "^1.5.0",
+    "jsonwebtoken": "^7.1.9",
     "qunit-tap": "^1.5.1",
     "qunitjs": "^2.0.1",
     "sinon": "^1.17.6"
@@ -34,4 +36,3 @@
     "node": "6.2.0"
   }
 }
-
