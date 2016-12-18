@@ -16,7 +16,7 @@ const { Joi } = jsonApi;
 
 const port = process.env.PORT || 3000;
 
-console.log(`setting port config of jsonApi to {port}`);
+console.log(`setting port config of jsonApi to ${port}`);
 jsonApi.setConfig({
   port,
   graphiql: true
