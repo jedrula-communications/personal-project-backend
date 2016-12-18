@@ -14,8 +14,11 @@ const MongoStore = require("jsonapi-store-mongodb");
 
 const { Joi } = jsonApi;
 
+const port = process.env.PORT || 3000;
+
+console.log(`setting port config of jsonApi to {port}`);
 jsonApi.setConfig({
-  port: process.env.PORT || 3000,
+  port,
   graphiql: true
 });
 
@@ -49,5 +52,6 @@ jsonApi.onUncaughtException((request, error) => {
   }))
 })
 
+console.log('starting jsonApi');
 jsonApi.start();
 
