@@ -12,6 +12,8 @@ const { mongoDbUrl } = config;
 const jsonApi = require("jsonapi-server");
 const MongoStore = require("jsonapi-store-mongodb");
 
+const { Joi } = jsonApi;
+
 jsonApi.setConfig({
   port: process.env.PORT || 3000,
   graphiql: true
@@ -25,10 +27,10 @@ jsonApi.define({
   attributes: {
     // TODO add date
     // TODO add author
-    title: jsonApi.Joi.string(),
-    category: jsonApi.Joi.string(),
-    body: jsonApi.Joi.string(),
-  }
+    title: Joi.string(),
+    categories: jsonApi.Joi.many('tags'),
+    body: Joi.string(),
+  },
 });
 
 // Load all the resources
