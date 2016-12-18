@@ -1,0 +1,12 @@
+#!/bin/bash
+echo "Doing build script..."
+echo "downloading master..."
+wget https://github.com/jedrula/personal-project-backend/archive/master.zip
+echo "unziping master..."
+unzip master.zip
+echo "removing master.zip..."
+rm master.zip
+echo "entering unzipped project dir..."
+cd personal-project-backend-master
+echo "installing npm packages..."
+npm i
