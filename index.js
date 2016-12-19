@@ -22,6 +22,7 @@ jsonApi.setConfig({
   graphiql: true
 });
 
+// TODO move to seperate file
 jsonApi.define({
   resource: "posts",
   handlers: new MongoStore({
@@ -29,7 +30,8 @@ jsonApi.define({
   }),
   attributes: {
     // TODO add date
-    // TODO add author
+    author: jsonApi.Joi.one("users"),
+    public: Joi.boolean(),
     title: Joi.string(),
     categories: jsonApi.Joi.many('tags'),
     body: Joi.string(),

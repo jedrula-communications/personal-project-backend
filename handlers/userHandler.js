@@ -6,7 +6,7 @@ const handler = new MongoStore({
   url: mongoDbUrl,
 });
 
-// TODO add some smarter authentication then simply disabling create, delete and update
+// TODO add some smarter authentication then simply disabling delete and update
 
 // handler.create = null;
 handler.delete = null;
