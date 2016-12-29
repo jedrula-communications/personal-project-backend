@@ -36,6 +36,7 @@ jsonApi.define({
     categories: jsonApi.Joi.many('tags'),
     body: Joi.string(),
     gist: Joi.string(),
+    date: Joi.number(),
   },
 });
 
