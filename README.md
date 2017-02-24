@@ -1,6 +1,16 @@
 # personal-project-backend
 this is a backend api (JSON API) for personal project
 
+#### config
+this service uses https://www.npmjs.com/package/config for managing configuration
+
+by default you will find in the ./config/default.js that mongoDbLocation is expected to be on the localhost:27017/jedrek
+
+you can change it by providing a config file like production.js and spinning up the server like 
+```
+NODE_ENV=production node index.js 
+```
+
 #### to download the code and spin the server
 
 1. copy contents of https://github.com/jedrula-communications/personal-project-backend/blob/master/bin/build to a file on the server like build_personal-project-backend
