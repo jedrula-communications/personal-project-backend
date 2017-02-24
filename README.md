@@ -30,7 +30,7 @@ node index.js
 
 4.1. ... as a service
 ```
-sudo forever-service install personal-project-backend-master --script index.js
+sudo forever-service install personal-project-backend-master --script index.js -e "NODE_ENV=production"
 sudo service personal-project-backend start
 ```
 
