@@ -31,7 +31,7 @@ node index.js
 4.1. ... as a service
 ```
 sudo forever-service install personal-project-backend-master --script index.js -e "NODE_ENV=production"
-sudo service personal-project-backend start
+sudo service personal-project-backend-master start
 ```
 
 [more on that here](http://jedrula-app.surge.sh/post/e58f4fd4-bda4-4a1d-801b-d68cc255a63f)
