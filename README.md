@@ -1,6 +1,7 @@
 # personal-project-backend
 this is a backend api (JSON API) for personal project
 
+
 #### config
 this service uses https://www.npmjs.com/package/config for managing configuration
 
@@ -10,6 +11,9 @@ you can change it by providing a config file like production.js and spinning up 
 ```
 NODE_ENV=production node index.js 
 ```
+
+#### TODO WRITE PROPER DOCS ABOUT MongoDb prerequisite
+you will need to install and spin up mongod server with something along the lines of `mongod`
 
 #### to download the code and spin the server
 
