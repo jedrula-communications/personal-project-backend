@@ -35,9 +35,10 @@ function connectToMongo(cb) {
     if (!err && db) {
       cb(db);
     } else {
-      setTimeout(() => {
-        connectToMongo(cb);
-      }, 1000)
+      process.exit(1);
+      // setTimeout(() => {
+      //   connectToMongo(cb);
+      // }, 1000)
     }
   });
 }
