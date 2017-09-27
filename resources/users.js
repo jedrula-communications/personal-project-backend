@@ -28,7 +28,21 @@ jsonApi.define({
 });
 
 const MongoClient = require('mongodb').MongoClient;
-MongoClient.connect(mongoDbUrl, function(err, db) {
+
+function connectToMongo(cb) {
+  console.log('attempting MongoClient.connect');
+  MongoClient.connect(mongoDbUrl, function(err, db) {
+    if (!err && db) {
+      cb(db);
+    } else {
+      setTimeout(() => {
+        connectToMongo(cb);
+      }, 1000)
+    }
+  });
+}
+
+connectToMongo(function(db) {
   // Create a collection we want to drop later
   const collection = db.collection(collectionName);
   // Create an index on the a field
