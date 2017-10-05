@@ -39,5 +39,5 @@ sudo forever-service install personal-project-backend-master --script index.js -
 sudo service personal-project-backend-master start
 ```
 
-[more on that here](http://jedrula-app.surge.sh/post/e58f4fd4-bda4-4a1d-801b-d68cc255a63f)
+[more on that here](https://github.com/zapty/forever-service)
 
